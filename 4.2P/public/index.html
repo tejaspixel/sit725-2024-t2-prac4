@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tezz Blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-wrapper teal">
+            <a href="#" class="brand-logo center">Tezz</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#posts">Posts</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container container-wrapper">
+        <div class="">
+            <div class="head">
+                <span class="head-title">Blog Posts</span>
+
+                <div class="input-field search-form">
+                    <input type="text" id="searchTxt" name="query" placeholder="Search blog posts..." class="validate"
+                        required />
+                    <label for="search">Search Blog</label>
+                    <button id="btnSearch" type="button" class="btn waves-effect waves-light teal btn-search"
+                        style="margin-top: 10px;">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="blogMainContent">
+        </div>
+        <ul class="pagination center" id="blogPagination">
+            <li class="disabled"><a href="#!" id="prev-page"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active" id="page-1"><a href="#!">1</a></li>
+            <li class="waves-effect" id="page-2"><a href="#!">2</a></li>
+            <li class="waves-effect" id="page-3"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!" id="next-page"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+        <h4 class="center">Popular Tags</h4>
+        <div class="row">
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Inspiration')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/1.jpg" alt="Inspiration">
+                    <div class="tag-text">
+                        <p class="tag-title">Inspiration</p>
+                        <p class="tag-posts">7 posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Nature')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/2.jpg" alt="Nature">
+                    <div class="tag-text">
+                        <p class="tag-title">Nature</p>
+                        <p class="tag-posts">6 posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Lifestyle')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/3.jpg" alt="Lifestyle">
+                    <div class="tag-text">
+                        <p class="tag-title">Lifestyle</p>
+                        <p class="tag-posts">6 posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Health')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/4.jpg" alt="Health">
+                    <div class="tag-text">
+                        <p class="tag-title">Health</p>
+                        <p class="tag-posts">5 posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Food')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/5.jpg" alt="Food">
+                    <div class="tag-text">
+                        <p class="tag-title">Food</p>
+                        <p class="tag-posts">5 posts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 tag-chip" onclick="filterBlogs('Technology')">
+                <div class="tag-card">
+                    <img src="./assets/images/blogs/6.jpg" alt="Technology">
+                    <div class="tag-text">
+                        <p class="tag-title">Technology</p>
+                        <p class="tag-posts">3 posts</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col s12 m6 l4 tag-chip see-all-tag-chip">
+            <div class="tag-card see-all-card">
+                <span>See all tags</span> <i class="material-icons">arrow_forward</i>
+            </div>
+        </div>
+        <div class="subscribe-section z-depth-2">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>
+                        Don't miss anything. Get all the latest posts delivered straight to your inbox. It's free!
+                    </p>
+                </div>
+
+                <div class="col s12 m6">
+                    <form class="subscribe-form">
+                        <div class="input-field">
+                            <input type="text" id="name" placeholder="Your name" class="white-text">
+                        </div>
+                        <div class="input-field">
+                            <input type="email" id="email" placeholder="Your email address" class="white-text">
+                        </div>
+                        <div>
+                            <button class="btn waves-effect waves-light btn-large" type="submit">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer teal lighten-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About Tezz</h5>
+                    <p class="grey-text text-lighten-4">A platform where ideas are shared, creativity flourishes, and
+                        discussions happen. Stay tuned for amazing content!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Connect</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3 footer-icon" href="#!"><i
+                                    class="material-icons">facebook</i>Facebook</a></li>
+                        <li><a class="grey-text text-lighten-3 footer-icon" href="#!"><i
+                                    class="material-icons">telegram</i>Telegram</a></li>
+                        <li><a class="grey-text text-lighten-3 footer-icon" href="#!"><i
+                                    class="material-icons">photo_camera</i>Instagram</a></li>
+                        <li><a class="grey-text text-lighten-3 footer-icon" href="#!"><i
+                                    class="material-icons">email</i>Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 Tezz. All rights reserved.
+                <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
